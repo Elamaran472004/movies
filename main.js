@@ -1,8 +1,11 @@
 import express from 'express';
 import movieRoutes from './Route/movies_route.js';
+import connectDb from './lib/DB.js';
 
 const app=express();
 const PORT=6969;
+
+connectDb();
 
 app.get('/', (req,res)=>{
     res.json({msg:"this is a movies Backend API"});
